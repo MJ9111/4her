@@ -36,14 +36,17 @@ and is wrapped around the whole page content, except for the footer in this exam
   <header class="w3-container w3-center w3-padding-48 w3-white">
     <h1 class="w3-xxxlarge"><b>4HER BLOGLIFE</b></h1>
     <h6>Welcome to the blog of <span class="w3-tag">4HER's world</span></h6>
+    <video autoplay muted loop id="myVideo">
+      <source src="/ko/lolo.mp4" type="video/mp4" >
+    </video> 
   </header>
 
   <!-- Image header -->
   <header class="w3-display-container w3-wide" id="home">
-    <img class="w3-image" src="/w3images/jane.jpg" alt="Fashion Blog" width="1600" height="1060">
+    <img class="w3-image" src="/ko/jane.jpg" alt="Fashion Blog" width="1600" height="1060">
     <div class="w3-display-left w3-padding-large">
       <h1 class="w3-text-white">Jane's</h1>
-      <h1 class="w3-jumbo w3-text-black w3-hide-small" ><b>FASHION BLOG</b></h1>
+      <h1 class="w3-jumbo w3-text-black w3-hide-small"><b>FASHION BLOG</b></h1>
       <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">SUBSCRIBE</button></h6>
     </div>
   </header>
@@ -54,6 +57,15 @@ and is wrapped around the whole page content, except for the footer in this exam
     <!-- Blog entries -->
     <div class="w3-col l8 s12">
     
+      <!-- Add Product Button -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>Welcome to the Product Page</h3>
+          <a href="/add-product" class="w3-button w3-black">Add Product</a>
+        </div>
+      </div>
+      <hr>
+      
       <!-- Blog entry -->
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
@@ -62,7 +74,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
 
         <div class="w3-justify">
-          <img src="/home/student/4her/MEDIA/ko/girl_hat.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <img src="/ko/girl_hat.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
           <p><strong>More Hats!</strong> I am crazy about hats these days. Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor
             magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
           <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
@@ -72,7 +84,7 @@ and is wrapped around the whole page content, except for the footer in this exam
           <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
             <hr>
               <div class="w3-col l2 m3">
-                <img src="/w3images/avatar_smoke.jpg" style="width:90px;">
+                <img src="/ko/runway.jpg" style="width:90px;">
               </div>
               <div class="w3-col l10 m9">
                 <h4>George <span class="w3-opacity w3-medium">May 3, 2024, 6:32 PM</span></h4>
@@ -91,7 +103,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
 
         <div class="w3-justify">
-          <img src="/w3images/man_hat.jpg" alt="Men in Hats" style="width:100%" class="w3-padding-16">
+          <img src="/ko/haooy.jpg" alt="Men in Hats" style="width:100%" class="w3-padding-16">
           <p><strong>Hats!</strong> The trend this summer is hats for men!</p>
           <p>Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies
             mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
@@ -111,54 +123,14 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <p>Love your blog page! Simply the best! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
               </div>
             </div>
-            <div class="w3-row w3-margin-bottom">
-              <div class="w3-col l2 m3">
-                <img src="/w3images/girl.jpg" style="width:90px;">
-              </div>
-              <div class="w3-col l10 m9">
-                <h4>Angie <span class="w3-opacity w3-medium">April 23, 2024, 9:12 PM</span></h4>
-                <p>Love hats!!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Blog entry -->
-      <div class="w3-container w3-white w3-margin w3-padding-large">
-        <div class="w3-center">
-          <h3>TITLE HEADING</h3>
-          <h5>Title description, <span class="w3-opacity">April 7, 2024</span></h5>
-        </div>
-
-        <div class="w3-justify">
-          <img src="/w3images/runway.jpg" alt="Runway" style="width:100%" class="w3-padding-16">
-          <p><strong>The trend this summer is runway shows.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Some text about this blog entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies
-            mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-          <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
-          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">3</span></button></p>
-          <p class="w3-clear"></p>
-          
-          <div id="demo3" style="display:none">
             <div class="w3-row">
               <hr>
               <div class="w3-col l2 m3">
-                <img src="/w3images/girl_mountain.jpg" style="width:90px;">
+                <img src="/w3images/girl_train.jpg" style="width:90px;">
               </div>
               <div class="w3-col l10 m9">
-                <h4>Kate <span class="w3-opacity w3-medium">April 6, 2015, 7:12 PM</span></h4>
-                <p>Nice blog post! Following</p><br>
-              </div>
-            </div>
-            <div class="w3-row w3-margin-bottom">
-              <div class="w3-col l2 m3">
-                <img src="/w3images/avatar_g.jpg" style="width:90px;">
-              </div>
-              <div class="w3-col l10 m9">
-                <h4>Jane <span class="w3-opacity w3-medium">April 3, 2015, 7:12 PM</span></h4>
-                <p>Great tips! Keep up the good work.</p><br>
+                <h4>Jane <span class="w3-opacity w3-medium">April 26, 2024, 10:52 PM</span></h4>
+                <p>Love your blog page! Simply the best! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
               </div>
             </div>
           </div>
@@ -171,14 +143,14 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-col l4">
       <!-- About Card -->
       <div class="w3-white w3-margin">
-        <img src="/w3images/avatar_g.jpg" alt="Jane" style="width:100%" class="w3-grayscale">
+        <img src="/ko/runway.jpg" alt="Jane" style="width:100%" class="w3-grayscale">
         <div class="w3-container w3-black">
           <h4>My Name</h4>
           <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
         </div>
       </div>
       <hr>
-      
+    
       <!-- Posts -->
       <div class="w3-white w3-margin">
         <div class="w3-container w3-padding w3-black">
@@ -186,25 +158,30 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
         <ul class="w3-ul w3-hoverable w3-white">
           <li class="w3-padding-16">
-            <img src="/w3images/avatar_smoke.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Denim</span><br>
+            <img src="/ko/girl_hat.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Hats</span><br>
             <span>Sed mattis nunc</span>
           </li>
           <li class="w3-padding-16">
-            <img src="/w3images/bandmember.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Sweaters</span><br>
-            <span>Praes tinci sed</span>
+            <img src="/ko/swat.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Stripes</span><br>
+            <span>Praesent tincidunt</span>
           </li> 
           <li class="w3-padding-16">
-            <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Workshop</span><br>
-            <span>Ultricies congue</span>
+            <img src="/ko/trand.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Men in Hats</span><br>
+            <span>Praesent tincidunt</span>
           </li>   
           <li class="w3-padding-16">
-            <img src="/w3images/avatar_smoke.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Trends</span><br>
-            <span>Lorem ipsum dipsum</span>
-          </li>   
+            <img src="/ko/uuu.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Mountains</span><br>
+            <span>Sed mattis nunc</span>
+          </li>  
+          <li class="w3-padding-16">
+            <img src="/ko/work.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Coffee</span><br>
+            <span>Praesent tincidunt</span>
+          </li>  
         </ul>
       </div>
       <hr> 
@@ -215,28 +192,29 @@ and is wrapped around the whole page content, except for the footer in this exam
           <h4>Tags</h4>
         </div>
         <div class="w3-container w3-white">
-          <p>
-            <span class="w3-tag w3-black w3-margin-bottom">Fashion</span> 
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> 
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Hats</span> 
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Norway</span> 
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sweaters</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Deals</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Accessories</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Jeans</span>
-            <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Trends</span>
-          </p>
+        <p><span class="w3-tag w3-black w3-margin-bottom">Fashion</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+          <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Hats</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Norway</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sweaters</span>
+          <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Deals</span>
+          <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Accessories</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span>
+          <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Jeans</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Trends</span>
+        </p>
         </div>
       </div>
-    
+      
+      <!-- Inspiration -->
+      <div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Inspiration</h4>
+        </div>
+        <div class="w3-container w3-white">
+          <p><span class="w3-large">Do</span> <span class="w3-large">not</span> <span class="w3-large">ignore</span> <span class="w3-large">your</span> <span class="w3-large">dreams.</span></p>
+          <p><span class="w3-large">The</span> <span class="w3-large">best</span> <span class="w3-large">way</span> <span class="w3-large">to</span> <span class="w3-large">predict</span> <span class="w3-large">the</span> <span class="w3-large">future</span> <span class="w3-large">is</span> <span class="w3-large">to</span> <span class="w3-large">create</span> <span class="w3-large">it.</span></p>
+        </div>
+      </div>
+      
     <!-- END Introduction Menu -->
     </div>
-
+    
   <!-- END GRID -->
   </div><br>
 
@@ -244,28 +222,41 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next</button>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="#"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="#"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="#"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+    <a href="#"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="#"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+  <p>Powered by <a href="#" target="_blank">4HER</a></p>
 </footer>
 
 <script>
 // Toggle between hiding and showing blog replies/comments
-document.getElementById("myBtn").click();
-function myFunction(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
+document.getElementById("myBtn").click = function() {
+  var x = document.getElementById("demo1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
 }
 
-// Toggle like button
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click = function() {
+  var x = document.getElementById("demo2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 function likeFunction(x) {
-  x.style.fontWeight = "bold";
-  x.innerHTML = "✓ Liked";
+  x.classList.toggle("w3-text-red");
 }
 </script>
 
