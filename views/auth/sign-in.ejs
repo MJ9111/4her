@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Sign In</title>
+  <style>
+    h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+    body {font-family: "Open Sans"}
+    .signin-container {
+      max-width: 400px;
+      margin: auto;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .signin-container h1 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .signin-container form {
+      display: flex;
+      flex-direction: column;
+    }
+    .signin-container label {
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .signin-container input {
+      margin-bottom: 16px;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .signin-container button {
+      padding: 12px;
+      font-size: 16px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .signin-container button:hover {
+      background-color: #333;
+    }
+    .signin-container img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons and authentication links -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-snapchat"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-flickr"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+  <a href="/auth/sign-in" class="w3-bar-item w3-button w3-right">Sign In</a>
+  <a href="/auth/sign-up" class="w3-bar-item w3-button w3-right">Sign Up</a>
+</div>
+
+<!-- Sign In Container -->
+<div class="signin-container w3-container w3-white w3-margin w3-padding-large">
+  <h1>Sign In</h1>
+  <img src="/home/student/4her/ko/girl_hat.jpg" alt="Sign In Image">
+  <form action="/auth/sign-in" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required />
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required />
+    <button type="submit">Sign In</button>
+  </form>
+</div>
+
+</body>
+</html>
