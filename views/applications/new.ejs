@@ -5,43 +5,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <style>
+    h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+    body {font-family: "Open Sans"}
+    /* Additional custom styles to match edit.ejs */
+    .w3-container.w3-margin {
+      margin-top: 48px; /* Adjust as needed */
+    }
+    .w3-padding-large {
+      padding: 16px;
+    }
+    .w3-button {
+      margin-top: 16px;
+    }
+    /* Adjust form styles */
+    form {
+      max-width: 600px; /* Adjust form width */
+      margin: auto;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    form input[type="text"],
+    form input[type="date"],
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px; /* Adjust font size */
+    }
+    form textarea {
+      height: 120px; /* Adjust textarea height */
+    }
+    form button[type="submit"] {
+      background-color: #4CAF50; /* Match button color */
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px; /* Adjust font size */
+    }
+    form button[type="submit"]:hover {
+      background-color: #45a049; /* Darker hover color */
+    }
+  </style>
   <title>Add a New App</title>
 </head>
-  <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Add a New App</h1>
+<body class="w3-light-grey">
 
-      <!-- views/applications/new.ejs -->
-      <div class="new-body">
-  <form action="/users/<%= user._id %>/applications" method="POST">
-    <label for="company">Company:</label>
-    <input type="text" name="company" id="company">
-    
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title">
-    
-    <label for="notes">Notes:</label>
-    <textarea name="notes" id="notes"></textarea>
-    
-    <label for="postingLink">Posting Link:</label>
-    <input type="text" name="postingLink" id="postingLink">
+  <!-- Navigation bar -->
+  <% include('../partials/_navbar.ejs') %>
 
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required>
-    
-    <label for="status">Status:</label>
-    <select id="status" name="status">
-      <option value="interested">Interested</option>
-      <option value="applied">Applied</option>
-      <option value="interviewing">Interviewing</option>
-      <option value="rejected">Rejected</option>
-      <option value="accepted">Accepted</option>
-    </select>
+  <!-- Main Content -->
+  <div class="w3-content" style="max-width:800px;margin-top:80px">
 
-    
-    <button type="submit">Add Application</button>
-  </form>
-</div>
-  </body>
+    <header class="w3-container w3-center w3-padding-48 w3-white">
+      <h1 class="w3-xxxlarge"><b>Add a New App</b></h1>
+    </header>
+
+    <div class="w3-container w3-white w3-margin w3-padding-large">
+      <form action="/users/<%= user._id %>/applications" method="POST">
+        <label for="company">Company:</label>
+        <input type="text" name="company" id="company">
+        
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
+        
+        <label for="notes">Notes:</label>
+        <textarea name="notes" id="notes"></textarea>
+        
+        <label for="postingLink">Posting Link:</label>
+        <input type="text" name="postingLink" id="postingLink">
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+          <option value="interested">Interested</option>
+          <option value="applied">Applied</option>
+          <option value="interviewing">Interviewing</option>
+          <option value="rejected">Rejected</option>
+          <option value="accepted">Accepted</option>
+        </select>
+
+        <button type="submit" class="w3-button w3-black w3-margin-top">Add Application</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+    <div class="w3-xlarge w3-padding-32">
+      <a href="#"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    </div>
+    <p>Powered by <a href="#" target="_blank">4HER</a></p>
+  </footer>
+
+</body>
 </html>

@@ -6,41 +6,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+        body {
+            font-family: "Open Sans";
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Oswald";
+        }
+
+        .all-apps-body {
+            max-width: 800px; /* Adjust as needed */
+            margin: 80px auto; /* Center align and adjust margin */
+            padding: 0 20px; /* Adjust padding */
+        }
+
+        .all-apps-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px; /* Adjust spacing */
+        }
+
+        .add-app-link {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px; /* Adjust spacing */
+        }
+
+        .add-product-form {
+            margin-top: 20px; /* Adjust spacing */
+        }
+
+        .add-product-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .add-product-form label {
+            margin-bottom: 10px; /* Adjust spacing */
+        }
+
+        .add-product-form input,
+        .add-product-form textarea {
+            margin-bottom: 10px; /* Adjust spacing */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .add-product-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
     <title>Your Apps</title>
 </head>
 
-<body>
+<body class="w3-light-grey">
 
+    <!-- Navigation bar -->
+    <% include('../partials/_navbar.ejs') %>
 
-  <div class="all-apps-body">
-    <div class="all-apps-header">
-      <h1>Your Apps</h1>
-      <a class="add-app-link" href="/users/<%=user._id%>/applications/new"
-        >Add an App</a
-      >
+    <!-- Main Content -->
+    <div class="w3-content all-apps-body">
+
+        <div class="w3-container w3-white w3-margin w3-padding-large">
+
+            <div class="all-apps-header">
+                <h1>Your Apps</h1>
+                <a class="add-app-link" href="/users/<%=user._id%>/applications/new">Add an App</a>
+            </div>
+
+            <ul>
+                <% applications.forEach((application) => { %>
+                <a href="/users/<%= user._id %>/applications/<%= application._id %>">
+                    <li><%= application.title %> at <%= application.company %></li>
+                </a>
+                <% }) %>
+            </ul>
+
+            <div class="add-product-form">
+                <h2>Add a Product</h2>
+                <form action="/users/<%= user._id %>/applications" method="post">
+                    <label for="productTitle">Product Title</label>
+                    <input type="text" id="productTitle" name="title" required>
+                    <label for="productPrice">Product Price</label>
+                    <input type="number" id="productPrice" name="price" required>
+                    <label for="productDetails">Product Details</label>
+                    <textarea id="productDetails" name="details" rows="4" required></textarea>
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+
+        </div>
+
     </div>
-    <ul>
-      <% applications.forEach((application)=>{ %>
-      <a href="/users/<%= user._id %>/applications/<%= application._id %>">
-        <li><%= application.title %> at <%= application.company %></li>
-      </a>
-      <% }) %>
-    </ul>
- <div class="add-product-form">
-<h2>add a product</h2>
-<form action="/users/<%= user._id %>/applications"method="post">
-<label for="productTitle">product Title</label>
-<input type="text" id="productTitle" name="Title" required>
-<label for="productPrice">product Price</label>
-<input type="number" id="productPrice" name="Price" required>
-<label for="productDetails">product Details</label>
-<textarea id="productDetails" name="Details" rows="4" required></textarea>
-<button type="submit">Add Product</button>
-</form>
- </div>
- 
-  </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+        <div class="w3-xlarge w3-padding-32">
+            <a href="#"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a href="#"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a href="#"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+            <a href="#"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+            <a href="#"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+        </div>
+        <p>Powered by <a href="#" target="_blank">4HER</a></p>
+    </footer>
+
 </body>
 
 </html>

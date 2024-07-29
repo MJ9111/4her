@@ -1,77 +1,86 @@
-<!-- views/applications/edit.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <style>
+    h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+    body {font-family: "Open Sans"}
+  </style>
   <title>Editing <%= application.title %></title>
 </head>
-<body>
+<body class="w3-light-grey">
 
-
-  <%- include('../partials/_navbar.ejs') %>
-
-  <div class="edit-body">
-  <h1>Edit <%= application.title %> at <%= application.company %></h1>
-  <form 
-    action="/users/<%= user._id %>/applications/<%= application._id %>?_method=PUT"
-    method="POST"
-  >
-    <label for="company">Company:</label>
-    <input 
-      type="text" 
-      name="company" 
-      id="company" 
-      value="<%= application.company %>"
-    >
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" value="<%= application.title %>">
-    <label for="notes">Notes:</label>
-    <textarea name="notes" id="notes"><%= application.notes %></textarea>
-    <label for="postingLink">Posting Link:</label>
-    <input 
-      type="text" 
-      name="postingLink" 
-      id="postingLink" 
-      value="<%= application.postingLink %>"
-    >
-    <label for="status">Status:</label>
-    <select id="status" name="status">
-      <option 
-        value="interested" 
-        <%= application.status === "interested" ? "selected" : "" %>
-      >
-        Interested
-      </option>
-      <option 
-        value="applied" 
-        <%= application.status === "applied" ? "selected" : "" %>
-      >
-        Applied
-      </option>
-      <option 
-        value="interviewing" 
-        <%= application.status === "interviewing" ? "selected" : "" %> 
-      >
-        Interviewing
-      </option>
-      <option 
-        value="rejected" 
-        <%= application.status === "rejected" ? "selected" : "" %>
-      >
-        Rejected
-      </option>
-      <option
-        value="accepted"
-        <%= application.status === "accepted" ? "selected" : "" %>
-      >
-        Accepted
-      </option>
-    </select>
-    <button type="submit">Update Application</button>
-  </form>
+  <!-- Navigation bar with social media icons and authentication links -->
+  <div class="w3-bar w3-black w3-hide-small">
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-snapchat"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-flickr"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+    <a href="/auth/sign-in" class="w3-bar-item w3-button w3-right">Sign In</a>
+    <a href="/auth/sign-up" class="w3-bar-item w3-button w3-right">Sign Up</a>
   </div>
+
+  <!-- Main Content -->
+  <div class="w3-content" style="max-width:1600px">
+
+    <header class="w3-container w3-center w3-padding-48 w3-white">
+      <h1 class="w3-xxxlarge"><b>Edit Application</b></h1>
+      <h6>Edit the details of your application for <span class="w3-tag"><%= application.company %></span></h6>
+    </header>
+
+    <div class="w3-row w3-padding w3-border">
+
+      <!-- Edit Form -->
+      <div class="w3-col l8 s12">
+        <div class="w3-container w3-white w3-margin w3-padding-large">
+          <h3>Edit <%= application.title %> at <%= application.company %></h3>
+          <form action="/users/<%= user._id %>/applications/<%= application._id %>?_method=PUT" method="POST">
+            <label for="company">Company:</label>
+            <input type="text" name="company" id="company" value="<%= application.company %>">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="<%= application.title %>">
+            <label for="notes">Notes:</label>
+            <textarea name="notes" id="notes"><%= application.notes %></textarea>
+            <label for="postingLink">Posting Link:</label>
+            <input type="text" name="postingLink" id="postingLink" value="<%= application.postingLink %>">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+              <option value="interested" <%= application.status === "interested" ? "selected" : "" %>>Interested</option>
+              <option value="applied" <%= application.status === "applied" ? "selected" : "" %>>Applied</option>
+              <option value="interviewing" <%= application.status === "interviewing" ? "selected" : "" %>>Interviewing</option>
+              <option value="rejected" <%= application.status === "rejected" ? "selected" : "" %>>Rejected</option>
+              <option value="accepted" <%= application.status === "accepted" ? "selected" : "" %>>Accepted</option>
+            </select>
+            <button type="submit" class="w3-button w3-black w3-margin-top">Update Application</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+    <div class="w3-xlarge w3-padding-32">
+      <a href="#"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+      <a href="#"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    </div>
+    <p>Powered by <a href="#" target="_blank">4HER</a></p>
+  </footer>
+
 </body>
 </html>

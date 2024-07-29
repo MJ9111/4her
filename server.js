@@ -1,63 +1,72 @@
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config(); // Load environment variables
+
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const morgan = require('morgan');
 const session = require('express-session');
+const path = require('path');
 
-// require our new middleware!
+// Require custom middleware
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
+// Require controllers
 const authController = require('./controllers/auth.js');
-
 const applicationsController = require('./controllers/applications.js');
 
-const port = process.env.PORT ? process.env.PORT : '3000';
+// Initialize Express app
+const app = express();
 
-const path = require('path');
+// Set port from environment variables or default to 3000
+const port = process.env.PORT || '3000';
 
-mongoose.connect(process.env.MONGODB_URI);
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
-// app.use(morgan('dev'));
+mongoose.connection.on('error', (err) => {
+  console.error(`MongoDB connection error: ${err}`);
+});
 
-//for style
-app.use(express.static(path.join(__dirname, 'public')));
+// Middleware setup
+app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
+app.use(methodOverride('_method')); // Support HTTP verbs like PUT and DELETE
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET, // Secret for signing the session ID cookie
     resave: false,
     saveUninitialized: true,
+    cookie: { secure: false } // Set to true if using HTTPS
   })
 );
-app.use(passUserToView); // use new passUserToView middleware here
 
+app.use(passUserToView); // Add user information to views
+
+// Route handlers
 app.get('/', (req, res) => {
-  // Check if the user is signed in (user in session )
   if (req.session.user) {
-    // Redirect signed-in users to their applications index
+    // Redirect signed-in users to their applications
     res.redirect(`/users/${req.session.user._id}/applications`);
   } else {
-    // Show the homepage for users who are not signed in
+    // Render homepage for users not signed in
     res.render('index.ejs');
   }
 });
 
+app.use('/auth', authController); // Authentication routes
+app.use(isSignedIn); // Ensure user is signed in for the following routes
+app.use('/users/:userId/applications', applicationsController); // User applications routes
 
-
-app.use('/auth', authController);
-app.use(isSignedIn); // use new isSignedIn middleware here
-app.use('/users/:userId/applications', applicationsController); // New!
-
+// Start the server
 app.listen(port, () => {
-  console.log(`The express app is ready on port ${port}!`);
+  console.log(`The Express app is ready on port ${port}!`);
 });
