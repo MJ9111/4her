@@ -1,6 +1,5 @@
 const express =require('express');
 const router = express.Router();
-
 const User = require('../models/User')
 
 // controllers/applications.js
@@ -125,4 +124,17 @@ router.put('/:applicationId', async (req, res) => {
     }
   });
 
+  router.post('/users/:userId/applications', (req, res) => {
+    const userId = req.params.userId;
+    const { title, price, details } = req.body;
+
+    // Save the product details to your database or file system
+    // For simplicity, let's assume saving to a file
+    const fs = require('fs');
+    const productData = `${title}, ${price}, ${details}\n`;
+    fs.appendFileSync('/home/student/4her/views/applications/product', productData);
+
+    // Redirect back to the index page or wherever appropriate
+    res.redirect(`/users/${userId}/applications`);
+  });
 module.exports = router;
