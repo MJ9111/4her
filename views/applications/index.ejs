@@ -115,7 +115,7 @@
             <div class="add-product-form">
                 <h2>Add a Product</h2>
                 <!-- Update action to include dynamic userId -->
-                <form action="/users/<%= user._id %>/applications" method="post">
+                <form action="/users/<%= user._id %>/applications/show" method="post">
                     <label for="productTitle">Product Title</label>
                     <input type="text" id="productTitle" name="title" required>
                     <label for="productPrice">Product Price</label>

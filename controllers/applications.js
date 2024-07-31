@@ -1,8 +1,32 @@
 const express =require('express');
 const router = express.Router();
 const User = require('../models/User')
-const product = require('../models/product')
+const Product = require('../models/product')
+
+
+
 // controllers/applications.js
+
+// Updating product details
+router.post('/:applicationId', async (req, res) => {
+    try {
+      // Find the user from req.session
+      const currentProduct = await Product.findById(req.session.Product._id);
+      // Find the current application from the id supplied by req.params
+      const Product = currentProduct.applications.id(req.params.applicationId);
+     
+      application.set(req.body);
+      // Save the current 
+      await currentProduct.save();
+      // Redirect back to the show view of the current application
+      res.redirect(
+        `/users/${currentProduct._id}/applications/${req.params.applicationId}`
+      );
+    } catch (error) {
+      console.log(error);
+      res.redirect('/')
+    }
+  });
 
 // Show all applications of current user
 router.get('/', async (req, res) => {
@@ -21,28 +45,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-// Updating product details
-router.post('/:applicationId', async (req, res) => {
-    try {
-      // Find the user from req.session
-      const currentProduct = await Product.findById(req.session.Product._id);
-      // Find the current application from the id supplied by req.params
-      const application = currentProduct.applications.id(req.params.applicationId);
-      // Use the Mongoose .set() method
-      // this method updates the current application to reflect the new form
-      // data on `req.body`
-      application.set(req.body);
-      // Save the current user
-      await currentProduct.save();
-      // Redirect back to the show view of the current application
-      res.redirect(
-        `/users/${currentProduct._id}/applications/${req.params.applicationId}`
-      );
-    } catch (error) {
-      console.log(error);
-      res.redirect('/')
-    }
-  });
+
 
 
 
