@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
@@ -26,9 +26,15 @@
     <div class="w3-center">
       <h3>Add a New Product</h3>
       <form action="/submit-product" method="post">
-        <input class="w3-input w3-border" type="text" placeholder="Product Name" name="productName" required>
-        <input class="w3-input w3-border" type="text" placeholder="Product Description" name="productDescription" required>
-        <input class="w3-input w3-border" type="number" placeholder="Product Price" name="productPrice" required>
+        <label for="productName">Product Name:</label>
+        <input class="w3-input w3-border" type="text" id="productName" placeholder="Product Name" name="productName" required>
+        <br><br>
+        <label for="productDescription">Product Description:</label>
+        <input class="w3-input w3-border" type="text" id="productDescription" placeholder="Product Description" name="productDescription" required>
+        <br><br>
+        <label for="productPrice">Product Price:</label>
+        <input class="w3-input w3-border" type="number" id="productPrice" placeholder="Product Price" name="productPrice" required>
+        <br><br>
         <button class="w3-button w3-black w3-margin-top" type="submit">Add Product</button>
       </form>
     </div>

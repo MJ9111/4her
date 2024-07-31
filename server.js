@@ -19,13 +19,10 @@ const applicationsController = require('./controllers/applications.js');
 const app = express();
 
 // Set port from environment variables or default to 3000
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
@@ -45,7 +42,7 @@ app.use(
     secret: process.env.SESSION_SECRET, // Secret for signing the session ID cookie
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Set to true if using HTTPS
+    cookie: { secure: process.env.NODE_ENV === 'production' } // Set to true if using HTTPS in production
   })
 );
 
@@ -65,6 +62,12 @@ app.get('/', (req, res) => {
 app.use('/auth', authController); // Authentication routes
 app.use(isSignedIn); // Ensure user is signed in for the following routes
 app.use('/users/:userId/applications', applicationsController); // User applications routes
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).send('Internal Server Error');
+});
 
 // Start the server
 app.listen(port, () => {
