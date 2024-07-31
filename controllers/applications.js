@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
   });
 
 // Updating product details
-router.put('/:applicationId', async (req, res) => {
+router.post('/:applicationId', async (req, res) => {
     try {
       // Find the user from req.session
       const currentProduct = await Product.findById(req.session.Product._id);
