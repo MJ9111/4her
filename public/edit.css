@@ -1,0 +1,97 @@
+/* stylesheets/edit.css */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald";
+  }
+  
+  body {
+    font-family: "Open Sans";
+    background-color: #f1f1f1;
+  }
+  
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+  
+  .main-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .header {
+    padding: 48px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .header h6 {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  .edit-form {
+    background-color: #fff;
+    padding: 40px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .edit-form h3 {
+    margin-top: 0;
+  }
+  
+  .edit-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .edit-form input,
+  .edit-form textarea,
+  .edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .edit-form button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-form button:hover {
+    background-color: #333;
+  }
+  
+  .footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 64px 0;
+  }
+  
+  .footer a {
+    color: #fff;
+    padding: 8px;
+    font-size: 24px;
+  }
+  
+  .footer a:hover {
+    opacity: 0.7;
+  }
+  

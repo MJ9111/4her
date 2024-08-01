@@ -1,0 +1,41 @@
+/* stylesheets/show.css */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald";
+  }
+  
+  body {
+    font-family: "Open Sans";
+  }
+  
+  .show-body {
+    max-width: 800px; /* Adjust as needed */
+    margin: 80px auto; /* Center align and adjust margin */
+    padding: 0 20px; /* Adjust padding */
+  }
+  
+  .show-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust spacing */
+  }
+  
+  .show-header h1 {
+    font-size: 36px; /* Adjust font size */
+  }
+  
+  .show-sidebar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .show-actions a,
+  .show-actions form {
+    margin-right: 20px; /* Adjust spacing */
+  }
+  
+  .show-notes {
+    margin-top: 20px; /* Adjust spacing */
+  }
+  
