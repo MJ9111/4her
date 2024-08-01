@@ -28,7 +28,7 @@ const User = require('../models/User')
 //    }
 //  });
 
-// Show all applications of current user
+// Show all companys of current user
 router.get('/', async (req, res) => {
     try {
       // Look up the user from req.session
@@ -44,6 +44,9 @@ router.get('/', async (req, res) => {
       res.redirect('/')
     }
   });
+
+//Display New Application Form
+
 
   router.get('/', (req, res) => {
     res.render('index'); // Adjust if your view file has a different name
@@ -61,7 +64,7 @@ router.get('/new', async (req, res) => {
 
   // controllers/applications.js`
 
-  // POST company
+  // creat new company
 router.post('/', async (req, res) => {
     try {
       // Look up the user from req.session
@@ -83,6 +86,7 @@ router.post('/', async (req, res) => {
     }
   });
 
+//Display Specific Application
 
 
 router.get('/:applicationId', async (req, res) => {
@@ -103,6 +107,7 @@ router.get('/:applicationId', async (req, res) => {
     }
   });
 
+//Show Edit Form for company
 
 
 router.get('/:applicationId/edit', async (req, res) => {
@@ -117,6 +122,9 @@ router.get('/:applicationId/edit', async (req, res) => {
       res.redirect('/')
     }
   }); 
+
+//Delete company
+
 
 router.delete('/:applicationId', async (req, res) => {
     try {
@@ -136,7 +144,7 @@ router.delete('/:applicationId', async (req, res) => {
     }
   });
 
-  // controllers/applications.js`
+  // updating/company.js`
 
 router.put('/:applicationId', async (req, res) => {
     try {
@@ -159,6 +167,9 @@ router.put('/:applicationId', async (req, res) => {
       res.redirect('/')
     }
   });
+
+//Extra Route for POST with Product
+
 
   router.post('/users/:userId/applications', (req, res) => {
     const userId = req.params.userId;
