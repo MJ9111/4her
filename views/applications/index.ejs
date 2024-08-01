@@ -1,5 +1,6 @@
 <!-- views/applications/index.ejs -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,19 +21,20 @@
         }
 
         .all-apps-body {
-            max-width: 800px; /* Adjust as needed */
-            margin: 80px auto; /* Center align and adjust margin */
-            padding: 0 20px; /* Adjust padding */
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
         }
 
         .all-apps-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px; /* Adjust spacing */
+            margin-bottom: 20px;
         }
 
-        .add-app-link {
+        .add-app-link,
+        .home-link {
             text-decoration: none;
             background-color: #4CAF50;
             color: white;
@@ -46,7 +48,7 @@
         }
 
         ul li {
-            margin-bottom: 10px; /* Adjust spacing */
+            margin-bottom: 10px;
         }
     </style>
     <title>Your Apps</title>
@@ -64,7 +66,8 @@
 
             <div class="all-apps-header">
                 <h1>Your company</h1>
-                <a class="add-app-link" href="/users/<%=user._id%>/applications/new">Add an company</a>
+                <a class="add-app-link" href="/users/<%= user._id %>/applications/new">Add an company</a>
+                <a class="home-link" href="/">Home</a>
             </div>
 
             <ul>

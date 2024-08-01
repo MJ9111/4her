@@ -1,32 +1,32 @@
 const express =require('express');
 const router = express.Router();
 const User = require('../models/User')
-const Product = require('../models/product')
+//const Product = require('../models/product')
 
 
 
 // controllers/applications.js
 
 // Updating product details
-router.post('/:applicationId', async (req, res) => {
-    try {
+//router.post('/:applicationId', async (req, res) => {
+//    try {
       // Find the user from req.session
-      const currentProduct = await Product.findById(req.session.Product._id);
+//      const currentProduct = await Product.findById(req.session.Product._id);
       // Find the current application from the id supplied by req.params
-      const Product = currentProduct.applications.id(req.params.applicationId);
+//      const Product = currentProduct.applications.id(req.params.applicationId);
      
-      application.set(req.body);
+//      application.set(req.body);
       // Save the current 
-      await currentProduct.save();
+//      await currentProduct.save();
       // Redirect back to the show view of the current application
-      res.redirect(
-        `/users/${currentProduct._id}/applications/${req.params.applicationId}`
-      );
-    } catch (error) {
-      console.log(error);
-      res.redirect('/')
-    }
-  });
+//      res.redirect(
+//        `/users/${currentProduct._id}/applications/${req.params.applicationId}`
+//      );
+//    } catch (error) {
+//      console.log(error);
+//      res.redirect('/')
+//    }
+//  });
 
 // Show all applications of current user
 router.get('/', async (req, res) => {
@@ -45,7 +45,9 @@ router.get('/', async (req, res) => {
     }
   });
 
-
+  router.get('/', (req, res) => {
+    res.render('index'); // Adjust if your view file has a different name
+});
 
 
 

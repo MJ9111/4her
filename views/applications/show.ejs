@@ -1,5 +1,3 @@
-<!-- views/applications/show.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/stylesheets/show.css">
   <style>
-    h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
-    body {font-family: "Open Sans"}
-    /* Additional custom styles */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Oswald";
+    }
+    body {
+      font-family: "Open Sans";
+      background-color: #f4f4f4; /* Light background color */
+      color: #333; /* Darker text color for better readability */
+    }
     .show-body {
       max-width: 800px; /* Adjust as needed */
       margin: 80px auto; /* Center align and adjust margin */
@@ -24,9 +27,12 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px; /* Adjust spacing */
+      border-bottom: 2px solid #4CAF50; /* Add a border */
+      padding-bottom: 10px; /* Padding for bottom */
     }
     .show-header h1 {
       font-size: 36px; /* Adjust font size */
+      color: #333; /* Dark text color */
     }
     .show-sidebar {
       display: flex;
@@ -36,8 +42,51 @@
     .show-actions form {
       margin-right: 20px; /* Adjust spacing */
     }
+    .show-actions a {
+      text-decoration: none;
+      color: #4CAF50; /* Green color for links */
+      font-weight: bold;
+      font-size: 16px; /* Adjust font size */
+    }
+    .show-actions a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+    .show-actions button {
+      background-color: #f44336; /* Red color for delete button */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .show-actions button:hover {
+      background-color: #d32f2f; /* Darker red on hover */
+    }
     .show-notes {
       margin-top: 20px; /* Adjust spacing */
+    }
+    .show-notes h2 {
+      border-bottom: 1px solid #ddd; /* Bottom border for section heading */
+      padding-bottom: 10px; /* Padding for bottom */
+    }
+    .show-notes p {
+      line-height: 1.6; /* Improve line height for readability */
+    }
+    footer {
+      background-color: #333; /* Dark background for footer */
+      color: white; /* White text color */
+      padding: 20px 0; /* Adjust padding */
+    }
+    footer a {
+      color: white;
+    }
+    footer a:hover {
+      color: #4CAF50; /* Green color on hover */
+    }
+    .w3-xlarge i {
+      font-size: 24px; /* Adjust icon size */
+      margin: 0 10px; /* Spacing between icons */
     }
   </style>
   <title><%= application.title %></title>
